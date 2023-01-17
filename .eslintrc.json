@@ -15,6 +15,7 @@
 	"rules": {
 		"eqeqeq": "off",
 		"curly": "error",
-		"quotes": ["error"]
+		"quotes": ["error"],
+		"import/prefer-default-export": "off"
 	}
 }
