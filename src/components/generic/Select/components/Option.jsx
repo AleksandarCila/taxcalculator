@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 
-import { SelectContext } from '../Select';
+import { SelectContext } from '../context';
 
 export function Option({ option, index }) {
 	const { selectedOption, setSelectedThenCloseDropdown } =

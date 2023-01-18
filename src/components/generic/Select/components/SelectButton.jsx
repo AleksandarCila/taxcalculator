@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 
-import { SelectContext } from '../Select';
+import { SelectContext } from '../context';
 
 export function SelectButton() {
 	const { options, toggleOptions, selectedOption } = useContext(SelectContext);

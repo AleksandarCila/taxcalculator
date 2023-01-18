@@ -1,8 +1,8 @@
 import { useState, useMemo } from 'react';
 
-export const useSelectContext = (options) => {
+export const useSelectContext = (options, selectedOption, onChange) => {
 	const [isOptionsOpen, setIsOptionsOpen] = useState(false);
-	const [selectedOption, setSelectedOption] = useState(0);
+	// const [selectedOption, setSelectedOption] = useState(0);
 
 	const toggleOptions = (e) => {
 		e.stopPropagation();
@@ -10,7 +10,7 @@ export const useSelectContext = (options) => {
 	};
 
 	const setSelectedThenCloseDropdown = (index) => {
-		setSelectedOption(index);
+		onChange(index);
 		setIsOptionsOpen(false);
 	};
 
@@ -31,5 +31,5 @@ export const useSelectContext = (options) => {
 		]
 	);
 
-    return {contextValue, setIsOptionsOpen};
+	return { contextValue, setIsOptionsOpen };
 };

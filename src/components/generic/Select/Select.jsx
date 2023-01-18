@@ -5,10 +5,14 @@ import { SelectButton, Options } from './components';
 
 import { useSelectContext } from './hooks';
 
-export const SelectContext = React.createContext({});
+import { SelectContext } from './context';
 
-export function Select({ options }) {
-	const { contextValue, setIsOptionsOpen } = useSelectContext(options);
+export function Select({ options, selected, onChange }) {
+	const { contextValue, setIsOptionsOpen } = useSelectContext(
+		options,
+		selected,
+		onChange
+	);
 
 	useEffect(() => {
 		const clickHandler = () => {
@@ -32,4 +36,6 @@ export function Select({ options }) {
 
 Select.propTypes = {
 	options: PropTypes.arrayOf(PropTypes.string).isRequired,
+	selected: PropTypes.number.isRequired,
+	onChange: PropTypes.func.isRequired,
 };
