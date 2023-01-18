@@ -2,7 +2,7 @@ import React, { useState,useMemo } from 'react';
 
 import { TaxContext } from './Context';
 
-import { Navbar } from './components';
+import { Navbar,SalaryGrid } from './components';
 
 import './app.css';
 import { TimeFrame } from './Models/IncomeCalculator';
@@ -20,6 +20,7 @@ function App() {
 		<TaxContext.Provider value={contextValue}>
 			<Navbar />
 			{/* <hr className="h-px bg-secondary-300 border-0" /> */}
+			<SalaryGrid />
 		</TaxContext.Provider>
 	);
 }

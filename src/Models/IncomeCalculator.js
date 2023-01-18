@@ -12,24 +12,21 @@ export class IncomeCalculator {
 
 	#taxPercent = 20;
 
-	gross = 0;
+	// gross = 0;
 
-	timeFrame = TimeFrame.MONTHLY;
+	// timeFrame = TimeFrame.MONTHLY;
 
-	constructor(gross, timeFrame) {
-		this.gross = gross;
-		this.timeFrame = timeFrame;
-	}
+	constructor() {}
 
-	setGross = (gross) => {
-		this.gross = gross;
-	};
+	// setGross = (gross) => {
+	// 	this.gross = gross;
+	// };
 
-	setTimeFrame = (timeFrame) => {
-		this.timeFrame = timeFrame;
-	};
+	// setTimeFrame = (timeFrame) => {
+	// 	this.timeFrame = timeFrame;
+	// };
 
-	#getWeeklyGross = () => {
+	#getWeeklyGross = (gross, timeFrame) => {
 		const weeklyGrossCalculator = {
 			[TimeFrame.WEEKLY]: (gross) => gross,
 			[TimeFrame.FORTHNIGHTLY]: (gross) => gross / 2,
@@ -37,23 +34,25 @@ export class IncomeCalculator {
 			[TimeFrame.ANNUAL]: (gross) => gross / this.#weeksInYear,
 		};
 
-		return weeklyGrossCalculator[this.timeFrame](this.gross);
+		return weeklyGrossCalculator[timeFrame](gross);
 	};
 
-	getResult = (timeFrame) => {
+	getResult = (gross, timeFrame, selectedTimeFrame) => {
 		const grossCalculator = {
 			[TimeFrame.WEEKLY]: (gross) => gross,
 			[TimeFrame.FORTHNIGHTLY]: (gross) => gross * 2,
 			[TimeFrame.MONTHLY]: (gross) => gross * this.#weeksInMonth,
 			[TimeFrame.ANNUAL]: (gross) => gross * this.#weeksInYear,
 		};
-		const gross = grossCalculator[timeFrame](this.#getWeeklyGross());
-		const tax = gross * (this.#taxPercent / 100);
-		const net = gross - tax;
+		const grossValue = grossCalculator[selectedTimeFrame](
+			this.#getWeeklyGross(gross, timeFrame)
+		);
+		const tax = grossValue * (this.#taxPercent / 100);
+		const net = grossValue - tax;
 		return {
-			gross,
-			tax,
-			net,
+			gross: Math.floor(grossValue),
+			tax: -Math.floor(tax),
+			net: Math.floor(net),
 		};
 	};
 }

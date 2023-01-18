@@ -18,6 +18,9 @@ module.exports = {
 					200: '#A499B3',
 					100: '#D0BCD5',
 				},
+				warning: {
+					DEFAULT:"#DD1155"
+				}
 			},
 		},
 	},
