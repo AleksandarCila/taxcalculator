@@ -2,7 +2,6 @@ import { useState, useMemo } from 'react';
 
 export const useSelectContext = (options, selectedOption, onChange) => {
 	const [isOptionsOpen, setIsOptionsOpen] = useState(false);
-	// const [selectedOption, setSelectedOption] = useState(0);
 
 	const toggleOptions = (e) => {
 		e.stopPropagation();

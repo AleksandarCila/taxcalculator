@@ -19,8 +19,17 @@ module.exports = {
 					100: '#D0BCD5',
 				},
 				warning: {
-					DEFAULT:"#DD1155"
-				}
+					DEFAULT: '#DD1155',
+				},
+			},
+			keyframes: {
+				scale: {
+					'0%': { transform: 'scale(0)' },
+					'100%': { transform: 'scale(1)' },
+				},
+			},
+			animation: {
+				'scale-render': 'scale 0.1s linear',
 			},
 		},
 	},

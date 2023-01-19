@@ -26,7 +26,7 @@ export function Select({ options, selected, onChange }) {
 
 	return (
 		<SelectContext.Provider value={contextValue}>
-			<div>
+			<div className="w-[100%]">
 				<SelectButton />
 				<Options />
 			</div>

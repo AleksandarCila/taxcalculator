@@ -9,7 +9,7 @@ export function SelectButton() {
 	return (
 		<button
 			type="button"
-			className="text-white bg-primary border-primary border-1 hover:bg-primary-200 font-medium text-sm px-4 py-2.5 text-center inline-flex items-center w-[150px] flex justify-between"
+			className="w-[100%] text-white bg-primary border-primary border-1 hover:bg-primary-200 font-medium text-sm px-4 py-2.5 text-center inline-flex items-center flex justify-between"
 			onClick={toggleOptions}
 		>
 			{options[selectedOption]}
