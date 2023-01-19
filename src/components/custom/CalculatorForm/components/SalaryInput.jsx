@@ -12,7 +12,7 @@ export function SalaryInput() {
 
 	return (
 		<>
-			<div className="text-secondary-100 text-lg pb-2 ">
+			<div className="text-secondary-100 text-lg pt-5 pb-2 ">
 				What is your total income?
 			</div>
 			<div className="flex items-center justify-center mx-auto w-[100%]">
