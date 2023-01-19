@@ -1,4 +1,4 @@
 export const SalaryType = {
+    GROSS:"Gross",
     NET:"Net",
-    GROSS:"Gross"
 }
