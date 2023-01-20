@@ -1,6 +1,6 @@
 # Income Tax Calculator
 
-Check demo [https://delightful-tanuki-88c3c3.netlify.app/]
+Check [demo](https://delightful-tanuki-88c3c3.netlify.app/).
 
 Small calculator that calculates your taxes based on your Salary input per Time Frame of your choice.
 
